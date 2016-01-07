@@ -5,17 +5,25 @@ prog
     ;
 
 stat
-    : expr
-    | ID '=' expr
+    : expr                   # printExpr
+    | ID '=' expr            # assign
     ;
 
 expr
-    : expr ('*'|'/') expr
-    | expr ('+'|'-') expr
-    | INT
-    | ID
-    | '(' expr ')'
+    : expr op=(MUL|DIV) expr # MulDiv
+    | expr op=(ADD|SUB) expr # AddSub
+    | INT                    # int
+    | ID                     # id
+    | '(' expr ')'           # parens
     ;
+
+MUL : '*' ;
+
+DIV : '/' ;
+
+ADD : '+' ;
+
+SUB : '-' ;
 
 ID  : [a-zA-Z]+ ;
 
