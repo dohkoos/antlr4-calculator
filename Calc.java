@@ -14,6 +14,9 @@ public class Calc {
         CalcParser parser = new CalcParser(tokens);
         ParseTree tree = parser.prog();
 
+        ParseTreeWalker walker = new ParseTreeWalker();
+        walker.walk(new DirectiveListener(), tree);
+
         EvalVisitor eval = new EvalVisitor();
         // To start walking the parse tree
         eval.visit(tree);
