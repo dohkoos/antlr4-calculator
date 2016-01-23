@@ -10,12 +10,14 @@ stat
     ;
 
 expr
-    : expr op=(MUL|DIV) expr # MulDiv
+    : expr op=(MOD|MUL|DIV) expr # MulDiv
     | expr op=(ADD|SUB) expr # AddSub
     | INT                    # int
     | ID                     # id
     | '(' expr ')'           # parens
     ;
+
+MOD : '%' ;
 
 MUL : '*' ;
 

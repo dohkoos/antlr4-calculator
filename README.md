@@ -47,17 +47,17 @@ EOF      # type ctrl-D on Unix or Ctrl+Z on Windows
 
 ## Features
 
-Calculator support only the basic arithmetic operators (addition, subtraction, multiplication, and division), expressions, parenthesized expressions, integer numbers, and variables.
+Calculator support only the basic arithmetic operators (addition, subtraction, multiplication, division, and modulus), expressions, parenthesized expressions, integer numbers, and variables.
 
 ```
 + --> addition
 - --> subtraction
 * --> multiplication
 / --> division
+% --> modulus
 ```
 
 ## TODO
 
 1. Add support for floating-point numbers.
 2. Add support for user-defined functions.
-3. Add support for modulus operator %.

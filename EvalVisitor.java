@@ -41,7 +41,8 @@ public class EvalVisitor extends CalcBaseVisitor<Integer> {
     public Integer visitMulDiv(CalcParser.MulDivContext ctx) {
         int left = visit(ctx.expr(0));  // get value of left subexpression
         int right = visit(ctx.expr(1)); // get value of right subexpression
-        if ( ctx.op.getType() == CalcParser.MUL ) return left * right;
+        if (ctx.op.getType() == CalcParser.MOD) return left % right;
+        if (ctx.op.getType() == CalcParser.MUL) return left * right;
         return left / right; // must be DIV
     }
 
