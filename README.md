@@ -61,3 +61,5 @@ Calculator support only the basic arithmetic operators (addition, subtraction, m
 
 1. Add support for floating-point numbers.
 2. Add support for user-defined functions.
+3. Add support for unary operators + and -.
+4. Add support for exponentiation operator ^.
