@@ -12,7 +12,7 @@ public class DirectiveListener extends CalcBaseListener {
     }
 
     @Override
-    public void exitMulDiv(CalcParser.MulDivContext ctx) {
+    public void exitModMulDiv(CalcParser.ModMulDivContext ctx) {
         if (ctx.op.getType() == CalcParser.MOD) {
             System.out.println("MOD");
         } else if (ctx.op.getType() == CalcParser.MUL) {

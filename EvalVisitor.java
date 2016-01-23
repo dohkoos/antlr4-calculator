@@ -36,9 +36,9 @@ public class EvalVisitor extends CalcBaseVisitor<Integer> {
         return 0;
     }
 
-    /** expr op=('*'|'/') expr */
+    /** expr op=('%'|'*'|'/') expr */
     @Override
-    public Integer visitMulDiv(CalcParser.MulDivContext ctx) {
+    public Integer visitModMulDiv(CalcParser.ModMulDivContext ctx) {
         int left = visit(ctx.expr(0));  // get value of left subexpression
         int right = visit(ctx.expr(1)); // get value of right subexpression
         if (ctx.op.getType() == CalcParser.MOD) return left % right;
