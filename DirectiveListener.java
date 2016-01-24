@@ -1,6 +1,16 @@
 public class DirectiveListener extends CalcBaseListener {
 
     @Override
+    public void exitFunc(CalcParser.FuncContext ctx) {
+        System.out.println("RETF\n");
+    }
+
+    @Override
+    public void exitCall(CalcParser.CallContext ctx) {
+        System.out.println("CALL");
+    }
+
+    @Override
     public void exitPrintExpr(CalcParser.PrintExprContext ctx) {
         System.out.println("RET\n");
     }
