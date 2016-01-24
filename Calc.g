@@ -5,18 +5,18 @@ prog
     ;
 
 stat
-    : expr                       # printExpr
-    | ID '=' expr                # assign
+    : expr                              # printExpr
+    | ID '=' expr                       # assign
     | ID '(' parm=(ID|INT) ')' '=' expr # func
     ;
 
 expr
-    : expr op=(MOD|MUL|DIV) expr # ModMulDiv
-    | expr op=(ADD|SUB) expr     # AddSub
-    | ID '(' expr ')'            # call
-    | INT                        # int
-    | ID                         # id
-    | '(' expr ')'               # parens
+    : expr op=(MOD|MUL|DIV) expr        # ModMulDiv
+    | expr op=(ADD|SUB) expr            # AddSub
+    | ID '(' expr ')'                   # call
+    | INT                               # int
+    | ID                                # id
+    | '(' expr ')'                      # parens
     ;
 
 MOD : '%' ;
