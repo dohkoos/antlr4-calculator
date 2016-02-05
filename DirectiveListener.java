@@ -50,4 +50,9 @@ public class DirectiveListener extends CalcBaseListener {
     public void exitInt(CalcParser.IntContext ctx) {
         System.out.println("LDC " + ctx.INT().getText());
     }
+
+    @Override
+    public void exitUnary(CalcParser.UnaryContext ctx) {
+        if ("-".equals(ctx.sign.getText())) System.out.println("NEG");
+    }
 }

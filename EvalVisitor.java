@@ -105,6 +105,14 @@ public class EvalVisitor extends CalcBaseVisitor<Integer> {
         return Integer.valueOf(ctx.INT().getText());
     }
 
+    /** ('+'|'-') expr */
+    @Override
+    public Integer visitUnary(CalcParser.UnaryContext ctx) {
+        int value = visit(ctx.expr());
+        if ("-".equals(ctx.sign.getText())) return value * -1;
+        return value;
+    }
+
     /** ID */
     @Override
     public Integer visitId(CalcParser.IdContext ctx) {

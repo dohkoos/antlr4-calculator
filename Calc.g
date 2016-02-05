@@ -17,6 +17,7 @@ expr
     | INT                               # int
     | ID                                # id
     | '(' expr ')'                      # parens
+    | sign=('+'|'-') expr               # unary
     ;
 
 MOD : '%' ;
