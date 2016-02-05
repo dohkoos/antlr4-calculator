@@ -30,8 +30,13 @@ ADD : '+' ;
 
 SUB : '-' ;
 
-ID  : [a-zA-Z]+ ;
+ID  : Letter+ ;
 
 INT : [0-9]+ ;
 
 WS  : [ \t\r\n]+ -> skip ;    // toss out whitespace
+
+fragment
+Letter
+    : [a-zA-Z]
+    ;
