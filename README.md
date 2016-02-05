@@ -47,15 +47,7 @@ EOF      # type ctrl-D on Unix or Ctrl+Z on Windows
 
 ## Features
 
-Calculator support only the basic arithmetic operators (addition, subtraction, multiplication, division, and modulus), unary operators (+, -), expressions, parenthesized expressions, user-defined functions, integer numbers, and variables.
-
-```
-+ --> addition
-- --> subtraction
-* --> multiplication
-/ --> division
-% --> modulus
-```
+Calculator support the basic arithmetic operators (+, -, *, /, %), unary operators (+, -), expressions, parenthesized expressions, user-defined functions, integer numbers, and variables.
 
 ## TODO
 
