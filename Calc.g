@@ -32,11 +32,16 @@ SUB : '-' ;
 
 ID  : Letter+ ;
 
-INT : [0-9]+ ;
+INT : Digit+ ;
 
 WS  : [ \t\r\n]+ -> skip ;    // toss out whitespace
 
 fragment
 Letter
     : [a-zA-Z]
+    ;
+
+fragment
+Digit
+    : [0-9]
     ;
