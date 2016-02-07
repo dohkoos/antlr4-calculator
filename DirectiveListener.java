@@ -47,8 +47,8 @@ public class DirectiveListener extends CalcBaseListener {
     }
 
     @Override
-    public void exitInt(CalcParser.IntContext ctx) {
-        System.out.println("LDC " + ctx.INT().getText());
+    public void exitNum(CalcParser.NumContext ctx) {
+        System.out.println("LDC " + ctx.NUM().getText());
     }
 
     @Override

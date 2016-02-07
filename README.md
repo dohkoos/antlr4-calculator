@@ -47,9 +47,8 @@ EOF      # type ctrl-D on Unix or Ctrl+Z on Windows
 
 ## Features
 
-Calculator support the basic arithmetic operators (+, -, *, /, %), unary operators (+, -), expressions, parenthesized expressions, user-defined functions, integer numbers, and variables.
+Calculator support the basic arithmetic operators (+, -, *, /, %), unary operators (+, -), expressions, parenthesized expressions, user-defined functions, integer numbers, floating-point numbers, and variables.
 
 ## TODO
 
-1. Add support for floating-point numbers.
-2. Add support for exponentiation operator ^.
+1. Add support for exponentiation operator ^.
