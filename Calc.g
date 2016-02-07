@@ -30,7 +30,7 @@ ADD : '+' ;
 
 SUB : '-' ;
 
-ID  : Letter+ ;
+ID  : Letter (Letter|Digit)* ;
 
 INT : Digit+ ;
 
@@ -38,7 +38,7 @@ WS  : [ \t\r\n]+ -> skip ;    // toss out whitespace
 
 fragment
 Letter
-    : [a-zA-Z]
+    : [a-zA-Z_]
     ;
 
 fragment
