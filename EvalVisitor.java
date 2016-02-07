@@ -1,13 +1,14 @@
 import java.util.HashMap;
 import java.util.Map;
-import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
 
 public class EvalVisitor extends CalcBaseVisitor<Double> {
     /**
-     * Functions definitions and their start in the tokenstream (for pushing them in nested calls).
-     * It's important to keep the order of the definitions, therefore we use a LinkedHashMap here.
+     * Function definitions and their start in the tokenstream (for pushing them in nested calls).
+     * It's important to keep the order of the definitions, therefore we use a LinkedList here.
      */
-    private Map<CalcParser.FuncContext, Double> functionDefinitions = new LinkedHashMap<CalcParser.FuncContext, Double>();
+    private List<CalcParser.FuncContext> functionDefinitions = new LinkedList<CalcParser.FuncContext>();
 
     /** Remember local variables. Currently, this is only the function parameter. */
     private Map<String, Double> localMemory = new HashMap<String, Double>();
@@ -21,7 +22,7 @@ public class EvalVisitor extends CalcBaseVisitor<Double> {
      * and (b) the formal parameter agrees if it is defined as constant.
      */
     private CalcParser.FuncContext findFunction(String name, Double paramValue) {
-        for (CalcParser.FuncContext fn : functionDefinitions.keySet()) {
+        for (CalcParser.FuncContext fn : functionDefinitions) {
             if (fn.ID(0).getText().equals(name)) {
                 // Check whether parameter matches
                 if (fn.parm.getType() == CalcParser.NUM
@@ -78,7 +79,7 @@ public class EvalVisitor extends CalcBaseVisitor<Double> {
     /** ID '(' parm ')' '=' expr */
     @Override
     public Double visitFunc(CalcParser.FuncContext ctx) {
-        functionDefinitions.put(ctx, 0d);
+        functionDefinitions.add(ctx);
         return 0d;
     }
 
