@@ -5,9 +5,10 @@ prog
     ;
 
 stat
-    : expr                              # printExpr
-    | ID '=' expr                       # assign
-    | ID '(' parm=(ID|NUM) ')' '=' expr # func
+    : expr NL                              # printExpr
+    | ID '=' expr NL                       # assign
+    | ID '(' parm=(ID|NUM) ')' '=' expr NL # func
+    | NL                                   # blank
     ;
 
 expr
@@ -46,7 +47,9 @@ FLT : Digit+ '.' Digit*
     | '.' Digit+
     ;
 
-WS  : [ \t\r\n]+ -> skip ;    // toss out whitespace
+NL  : '\r'? '\n' ;        // return newline to parser (is end-statement signal)
+
+WS  : [ \t]+ -> skip ;    // toss out whitespace
 
 fragment
 Letter
