@@ -14,10 +14,14 @@ expr
     : expr op=(MOD|MUL|DIV) expr        # ModMulDiv
     | expr op=(ADD|SUB) expr            # AddSub
     | ID '(' expr ')'                   # call
-    | NUM                               # num
+    | sign=('+'|'-') primary            # unary
+    | primary                           # prim
+    ;
+
+primary
+    : NUM                               # num
     | ID                                # id
     | '(' expr ')'                      # parens
-    | sign=('+'|'-') expr               # unary
     ;
 
 MOD : '%' ;

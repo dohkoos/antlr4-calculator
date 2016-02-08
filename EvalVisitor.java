@@ -109,7 +109,7 @@ public class EvalVisitor extends CalcBaseVisitor<Double> {
     /** ('+'|'-') expr */
     @Override
     public Double visitUnary(CalcParser.UnaryContext ctx) {
-        double value = visit(ctx.expr());
+        double value = visit(ctx.primary());
         if ("-".equals(ctx.sign.getText())) return value * -1;
         return value;
     }
